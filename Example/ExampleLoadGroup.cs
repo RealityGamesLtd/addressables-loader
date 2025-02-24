@@ -10,11 +10,11 @@ namespace AddressablesLoader.Example
 
         [SerializeField] private Button _loadLocalGroup;
         [SerializeField] private Button _unloadLocalGroup;
-        private AddressablesManager _addressableManager;
+        private AddressablesGroupManager _addressableManager;
 
         void Awake()
         {
-            _addressableManager = new AddressablesManager();
+            _addressableManager = new AddressablesGroupManager();
 
             _loadLocalGroup.onClick.AddListener(() =>
             {

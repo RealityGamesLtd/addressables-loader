@@ -10,7 +10,8 @@ using UnityEngine.ResourceManagement.AsyncOperations;
 
 namespace AddressablesLoader
 {
-    public class AddressablesManager
+    //Class for loading group/label assets
+    public class AddressablesGroupManager
     {
         private Dictionary<string, object> _keysGroupsInUse = new Dictionary<string, object>();
 
