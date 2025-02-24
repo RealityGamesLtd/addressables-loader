@@ -1,0 +1,20 @@
+{
+    "name": "com.realitygames.addressablesloader",
+    "version": "1.0.0",
+    "displayName": "AddressablesLoader",
+    "description": "",
+    "unity": "6000.0",
+    "keywords": [
+        "memory",
+        "bundle",
+        "assetBundle"
+    ],
+    "dependencies": {
+        "com.unity.addressables" : "2.2.2"
+    },
+    "author": {
+        "name": "Reality Games",
+        "email": "jakub.szwajcok@reality.co"
+    },
+    "type": "library"
+}
