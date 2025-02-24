@@ -93,6 +93,11 @@ namespace  AddressablesLoader
         {
             assetReference.ReleaseAsset();
         }
+
+        public static void UnloadHandleAsyncOperation(AsyncOperationHandle asyncOperationHandle)
+        {
+            Addressables.Release(asyncOperationHandle);
+        }
     }
 }
 

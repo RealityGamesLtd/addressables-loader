@@ -10,7 +10,6 @@ using UnityEngine.ResourceManagement.AsyncOperations;
 
 namespace AddressablesLoader
 {
-    //Class for loading group/label assets
     public class AddressablesGroupManager
     {
         private Dictionary<string, object> _keysGroupsInUse = new Dictionary<string, object>();
@@ -127,6 +126,20 @@ namespace AddressablesLoader
                 Debug.Log($"Unload label: {keyGroup}");
             }
         }
+
+        public void UnloadAssetGroup(string keyGroup,Type type)
+        {
+            if (_keysGroupsInUse.ContainsKey(keyGroup))
+            {
+                Type listTypeGeneric = typeof(IList<>).MakeGenericType(type);
+                Type genericHandleType = typeof(AsyncOperationHandle<>).MakeGenericType(listTypeGeneric);
+                var methodInfo = genericHandleType.GetMethod("Release");
+                methodInfo.Invoke(_keysGroupsInUse[keyGroup],null);
+                _keysGroupsInUse.Remove(keyGroup);
+                Debug.Log($"Unload label: {keyGroup}");
+            }
+        }
+
 
         /// <summary>
         /// Recommended function for getting assets from AsyncOperationHandle<IList<T>> if you handle loading yourself.
